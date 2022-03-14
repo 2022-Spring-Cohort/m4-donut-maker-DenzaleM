@@ -45,7 +45,7 @@ class Shop{
             this.Autobakercost=Math.round(this.Autobakercost*1.1)};
 
             if(this.autobakeId == undefined){
-                this.autobakeId= self.setInterval(this.Autobaking, 4000);
+                this.autobakeId= self.setInterval(this.Autobaking, 3000);
               }
 
     }
@@ -59,6 +59,11 @@ class Shop{
            this.Bakedonut();
        }
 
+    }
+
+    blowup(){
+        console.log("A trap card was activated");
+        this.Donutsmade-=Math.round(this.Donutsmade*.9)
     }
 
   

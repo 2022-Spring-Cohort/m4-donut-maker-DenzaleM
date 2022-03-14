@@ -5,6 +5,7 @@ const PurchasemultilplierButton= document.getElementById("multilplier");
 const PurchaseautobakerButton= document.getElementById("automaker");
 const ResetgameButton=document.getElementById("Resetgame");
 const StartgameButton=document.getElementById("startgame");
+const StopDoughBurglarsButton=document.getElementById("stopburglar");
 
 
 
@@ -42,20 +43,32 @@ let myShop = new Shop();
 
 
 let  playgame = setInterval(Updateshop, 1000);
+let timer= setInterval(myShop.blowup,10000);
+
+
 
 
 if(!Updateshopcontrols.IsRunning){
     Updateshopcontrols(true);
-    
+    Updateshop();
   }
-
-
   
+
+
+
+  StopDoughBurglarsButton.addEventListener("click", function(){
+    console.log.apply("the stop button was clicked");
+    
+    });
+
 StartgameButton.addEventListener("click", function(){
 console.log("The game was started");
 Updateshopcontrols()=true;
 Updateshop();
-})
+
+
+
+});
 
 
 ResetgameButton.addEventListener("click", function(){
@@ -68,16 +81,16 @@ Updateshopcontrols.IsRunning=false;
 BakeDonutButton.addEventListener("click", function(){
 console.log("Bake was clicked");
 myShop.Bakedonut();
-
 Updateshop()
+
 });
 
 PurchasemultilplierButton.addEventListener("click",function(){
 console.log("Purchase multipler was clicked");
 myShop.multilpliercommand();
-
 multamount.innerText = "Cost of Multi: " + myShop.Multiplercost;
 Updateshop()
+
 });
 
 PurchaseautobakerButton.addEventListener("click", function(){
